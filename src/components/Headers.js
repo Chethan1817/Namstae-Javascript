@@ -1,0 +1,34 @@
+import { useState } from "react";
+
+const Header = () => {
+    const [isLogin, setIsLogin] = useState(false);
+
+    function handleBtn() {
+        setIsLogin(!isLogin);
+    }
+
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img 
+                    className="logo" 
+                    src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?size=2" 
+                    alt="Logo"
+                />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Cart</li>
+                    <button onClick={handleBtn}>
+                        {isLogin ? 'Logout' : 'Login'}
+                    </button>
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+export default Header;

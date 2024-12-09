@@ -2940,83 +2940,903 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
-// normal react 
-const heading1 = /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {
-    id: "heading"
-}, "hello world");
-const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
-root.render(heading1);
-console.log(heading1);
-// using jsx, it is React Element
-const heading2 = /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-    id: "heading",
-    children: "namastae react js using jsx"
-}, void 0, false, {
-    fileName: "app.js",
-    lineNumber: 17,
-    columnNumber: 16
-}, undefined);
-root.render(heading2);
-console.log(heading2);
-const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-        id: "heading",
-        children: "namastae react js using jsx"
-    }, void 0, false, {
-        fileName: "app.js",
-        lineNumber: 23,
-        columnNumber: 5
-    }, undefined);
-_c = Title;
-// react functional component
-let Heading3 = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        id: "container",
+/**
+ * 
+ * header
+*     -logo
+*    -nav items
+ * 
+ * body
+ *   -search
+ *   -restaurent container
+ *      -restaurentcards
+ * 
+ * footer
+ *   -copy rights
+ *   -addresss
+ *   -links
+ *   -contacts
+ * 
+ */ const Header = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "header",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 30,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "hello world it is using the jsx and react component"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "=logo-container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                    className: "logo",
+                    src: "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?size=2"
+                }, void 0, false, {
+                    fileName: "app.js",
+                    lineNumber: 27,
+                    columnNumber: 17
+                }, undefined)
             }, void 0, false, {
                 fileName: "app.js",
-                lineNumber: 31,
-                columnNumber: 5
+                lineNumber: 26,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav-items",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Home"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 31,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "About us"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 32,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Contact us"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 33,
+                            columnNumber: 21
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                            children: "Cart"
+                        }, void 0, false, {
+                            fileName: "app.js",
+                            lineNumber: 34,
+                            columnNumber: 21
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "app.js",
+                    lineNumber: 30,
+                    columnNumber: 17
+                }, undefined)
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 29,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "app.js",
-        lineNumber: 29,
-        columnNumber: 5
+        lineNumber: 25,
+        columnNumber: 9
     }, undefined);
-_c1 = Heading3;
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Heading3, {}, void 0, false, {
+};
+_c = Header;
+const RestaurantCard = (props)=>{
+    const { resData } = props;
+    const { name, cuisines, avgRating, costForTwo } = resData?.data;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "res-card",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "res-logo",
+                src: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/6/11/4ee8bc77-ca9f-41bd-a0f3-511c70902b91_77949.JPG"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 46,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: name
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 47,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: cuisines.join(" , ")
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 48,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: avgRating
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 49,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                children: costForTwo
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 50,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 45,
+        columnNumber: 9
+    }, undefined);
+};
+_c1 = RestaurantCard;
+const resList = [
+    {
+        type: "restaurent",
+        data: {
+            "id": "32129",
+            "name": "Burger King",
+            "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/11/7f76a072-c1bc-4d74-ac56-33e0eea20c1e_32129.JPG",
+            "locality": "Himayath Nagar",
+            "areaName": "Himayath Nagar",
+            "costForTwo": "\u20B9350 for two",
+            "cuisines": [
+                "Burgers",
+                "American"
+            ],
+            "avgRating": 4.3,
+            "parentId": "166",
+            "avgRatingString": "4.3",
+            "totalRatingsString": "83K+",
+            "sla": {
+                "deliveryTime": 40,
+                "lastMileTravel": 1.4,
+                "serviceability": "SERVICEABLE",
+                "slaString": "40-45 mins",
+                "lastMileTravelString": "1.4 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-10-15 01:00:00",
+                "opened": true
+            },
+            "badges": {
+                "imageBadges": [
+                    {
+                        "imageId": "Green%20Dot%20Awards/Best%20In%20Veg%20Burger.png",
+                        "description": "Delivery!"
+                    },
+                    {
+                        "imageId": "Rxawards/_CATEGORY-Burger.png",
+                        "description": "Delivery!"
+                    }
+                ]
+            },
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "textBased": {},
+                    "imageBased": {
+                        "badgeObject": [
+                            {
+                                "attributes": {
+                                    "description": "Delivery!",
+                                    "imageId": "Green%20Dot%20Awards/Best%20In%20Veg%20Burger.png"
+                                }
+                            },
+                            {
+                                "attributes": {
+                                    "description": "Delivery!",
+                                    "imageId": "Rxawards/_CATEGORY-Burger.png"
+                                }
+                            }
+                        ]
+                    },
+                    "textExtendedBadges": {}
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "60% OFF",
+                "subHeader": "UPTO \u20B9120"
+            },
+            "loyaltyDiscoverPresentationInfo": {
+                "logoCtx": {
+                    "text": "BENEFITS",
+                    "logo": "v1634558776/swiggy_one/OneLogo_3x.png"
+                },
+                "freedelMessage": "FREE DELIVERY"
+            },
+            "orderabilityCommunication": {
+                "title": {},
+                "subTitle": {},
+                "message": {},
+                "customIcon": {}
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {},
+                    "video": {}
+                }
+            },
+            "reviewsSummary": {},
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {},
+            "externalRatings": {
+                "aggregatedRating": {
+                    "rating": "4.2",
+                    "ratingCount": "8.8K+"
+                },
+                "source": "GOOGLE",
+                "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+            },
+            "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+        },
+        "analytics": {},
+        "cta": {
+            "link": "swiggy://menu?restaurant_id=32129&source=collection&query=Burger",
+            "text": "RESTAURANT_MENU",
+            "type": "DEEPLINK"
+        },
+        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+    },
+    {
+        data: {
+            "id": "240756",
+            "name": "Sauced Up",
+            "cloudinaryImageId": "ivujtnub9wqbnosfkedy",
+            "locality": "Masab Tank",
+            "areaName": "Banjara Hills",
+            "costForTwo": "\u20B9200 for two",
+            "cuisines": [
+                "American",
+                "Fast Food"
+            ],
+            "avgRating": 4.5,
+            "parentId": "19462",
+            "avgRatingString": "4.5",
+            "totalRatingsString": "6.5K+",
+            "sla": {
+                "deliveryTime": 49,
+                "lastMileTravel": 3,
+                "serviceability": "SERVICEABLE",
+                "slaString": "45-50 mins",
+                "lastMileTravelString": "3.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-10-15 00:45:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "textBased": {},
+                    "imageBased": {},
+                    "textExtendedBadges": {}
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "20% OFF",
+                "subHeader": "UPTO \u20B9100"
+            },
+            "loyaltyDiscoverPresentationInfo": {
+                "logoCtx": {
+                    "text": "BENEFITS",
+                    "logo": "v1634558776/swiggy_one/OneLogo_3x.png"
+                },
+                "freedelMessage": "FREE DELIVERY"
+            },
+            "orderabilityCommunication": {
+                "title": {},
+                "subTitle": {},
+                "message": {},
+                "customIcon": {}
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {},
+                    "video": {}
+                }
+            },
+            "reviewsSummary": {},
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {},
+            "externalRatings": {
+                "aggregatedRating": {
+                    "rating": "4.4",
+                    "ratingCount": "446"
+                },
+                "source": "GOOGLE",
+                "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+            },
+            "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+        },
+        "analytics": {},
+        "cta": {
+            "link": "swiggy://menu?restaurant_id=240756&source=collection&query=Burger",
+            "text": "RESTAURANT_MENU",
+            "type": "DEEPLINK"
+        },
+        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3,
+            "parentId": "27123",
+            "avgRatingString": "4.3",
+            "totalRatingsString": "1.0K+",
+            "sla": {
+                "deliveryTime": 46,
+                "lastMileTravel": 10.9,
+                "serviceability": "SERVICEABLE",
+                "slaString": "45-50 mins",
+                "lastMileTravelString": "10.9 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-10-14 23:00:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "textBased": {},
+                    "imageBased": {},
+                    "textExtendedBadges": {}
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "\u20B9150 OFF",
+                "subHeader": "ABOVE \u20B9349",
+                "discountTag": "FLAT DEAL"
+            },
+            "orderabilityCommunication": {
+                "title": {},
+                "subTitle": {},
+                "message": {},
+                "customIcon": {}
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {},
+                    "video": {}
+                }
+            },
+            "reviewsSummary": {},
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {},
+            "externalRatings": {
+                "aggregatedRating": {
+                    "rating": "--"
+                }
+            },
+            "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+        },
+        "analytics": {},
+        "cta": {
+            "link": "swiggy://menu?restaurant_id=234875&source=collection&query=Biryani",
+            "text": "RESTAURANT_MENU",
+            "type": "DEEPLINK"
+        },
+        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+    },
+    {
+        data: {
+            "id": "240756",
+            "name": "Sauced Up",
+            "cloudinaryImageId": "ivujtnub9wqbnosfkedy",
+            "locality": "Masab Tank",
+            "areaName": "Banjara Hills",
+            "costForTwo": "\u20B9200 for two",
+            "cuisines": [
+                "American",
+                "Fast Food"
+            ],
+            "avgRating": 4.5,
+            "parentId": "19462",
+            "avgRatingString": "4.5",
+            "totalRatingsString": "6.5K+",
+            "sla": {
+                "deliveryTime": 49,
+                "lastMileTravel": 3,
+                "serviceability": "SERVICEABLE",
+                "slaString": "45-50 mins",
+                "lastMileTravelString": "3.0 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-10-15 00:45:00",
+                "opened": true
+            },
+            "badges": {},
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "textBased": {},
+                    "imageBased": {},
+                    "textExtendedBadges": {}
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "20% OFF",
+                "subHeader": "UPTO \u20B9100"
+            },
+            "loyaltyDiscoverPresentationInfo": {
+                "logoCtx": {
+                    "text": "BENEFITS",
+                    "logo": "v1634558776/swiggy_one/OneLogo_3x.png"
+                },
+                "freedelMessage": "FREE DELIVERY"
+            },
+            "orderabilityCommunication": {
+                "title": {},
+                "subTitle": {},
+                "message": {},
+                "customIcon": {}
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {},
+                    "video": {}
+                }
+            },
+            "reviewsSummary": {},
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {},
+            "externalRatings": {
+                "aggregatedRating": {
+                    "rating": "4.4",
+                    "ratingCount": "446"
+                },
+                "source": "GOOGLE",
+                "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+            },
+            "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+        },
+        "analytics": {},
+        "cta": {
+            "link": "swiggy://menu?restaurant_id=240756&source=collection&query=Burger",
+            "text": "RESTAURANT_MENU",
+            "type": "DEEPLINK"
+        },
+        "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    },
+    {
+        data: {
+            "id": "234875",
+            "name": "Adil Hotel",
+            "cloudinaryImageId": "lln3zxpll8pshaeqrgr9",
+            "locality": "Rautha Wada",
+            "areaName": "Chhindwara Locality",
+            "costForTwo": "\u20B9150 for two",
+            "cuisines": [
+                "North Indian",
+                "Biryani",
+                "Tandoor"
+            ],
+            "avgRating": 4.3
+        }
+    }
+];
+const Body = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "body",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search",
+                children: "search"
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 851,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "res-container",
+                children: resList.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RestaurantCard, {
+                        resData: restaurant
+                    }, restaurant.data.id, false, {
+                        fileName: "app.js",
+                        lineNumber: 857,
+                        columnNumber: 25
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 854,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 850,
+        columnNumber: 9
+    }, undefined);
+};
+_c2 = Body;
+const Applayout = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "app",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 868,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Body, {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 869,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "app.js",
+        lineNumber: 867,
+        columnNumber: 9
+    }, undefined);
+};
+_c3 = Applayout;
+const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Applayout, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 34,
+    lineNumber: 876,
     columnNumber: 13
-}, undefined)); //nested html div inside div and inside child div h1 tag
- // const parent=React.createElement("div",{id:"parent"},
- //     React.createElement("div",{id:"child"},
- //         React.createElement("h1",{},"i am nested h1 in divs")
- //     )
- // )
- // console.log(parent)
- // root.render(parent)
- //for siblings
- // const parent1=React.createElement("div",{id:"parent"},
- //     [
- //         React.createElement("div",{id:"child1"},
- //             [React.createElement("h1",{},"i am nested h1 in divs"),
- //             React.createElement("h1",{},"i am second  nested h1 in divs")]),
- //         React.createElement("div",{id:"child2"},
- //             [React.createElement("h1",{},"i am nested h2 in divs"),
- //             React.createElement("h1",{},"i am second  nested h2 in divs")])
- //     ]);
- // console.log(parent1)
- // root.render(parent1) 
-var _c, _c1;
-$RefreshReg$(_c, "Title");
-$RefreshReg$(_c1, "Heading3");
+}, undefined));
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "RestaurantCard");
+$RefreshReg$(_c2, "Body");
+$RefreshReg$(_c3, "Applayout");
 
   $parcel$ReactRefreshHelpers$6024.postlude(module);
 } finally {

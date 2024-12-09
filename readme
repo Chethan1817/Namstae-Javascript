@@ -75,3 +75,24 @@ Read about dif bundlers: vite, webpack, parcel these are module bundles
 ● Read about: ^ - caret and ~ - tilda ^ for small upgrades ~ for big updates 
 
 ● Read about Script types in html (MDN Docs)
+
+
+
+/**
+ * 
+ * header
+*     -logo
+*    -nav items
+ * 
+ * body
+ *   -search
+ *   -restaurent container
+ *      -restaurentcards
+ * 
+ * footer
+ *   -copy rights
+ *   -addresss
+ *   -links
+ *   -contacts
+ * 
+ */
