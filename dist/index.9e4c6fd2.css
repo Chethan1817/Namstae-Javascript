@@ -46,8 +46,25 @@
   display: flex;
 }
 
+.filter {
+  display: flex;
+}
+
 .filter.btn {
   cursor: pointer;
+  margin: 10px;
+  padding: 10px;
+}
+
+.shimmer-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.shimmer-cards {
+  border: 1px solid gray;
+  width: 215px;
+  height: 300px;
   margin: 10px;
   padding: 10px;
 }

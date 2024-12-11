@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-
+import Shimmerui from "./Shimmerui";
+import { Link } from "react-router-dom";
+import useOnlinestatus from "../utils/useOnlinestatus";
 const Body = () => {
-    const [listofres, setlistofres] = useState([]);  
+    const [listofres, setlistofres] = useState([]);
+    const[filtres,setfiltres]=useState([]);  
+    const[search,setsearch]=useState("");
 
+    
     useEffect(() => {
         fetchdata();
     }, []);
@@ -17,38 +22,52 @@ const Body = () => {
             console.log(json)
             const restaurants = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
             setlistofres(restaurants);
+            setfiltres(restaurants);
         } catch (error) {
             console.error("Error fetching data:", error);
             setlistofres([]); 
         }
     };
 
-    const handleTopRated = () => {
-        const filter = listofres.filter((res) => res.info.avgRating > 4);
-        setlistofres(filter);
-    };
-    if(listofres.length===0)
-    {
-        return(<h1>loading...</h1>)
+
+    const online=useOnlinestatus();
+
+    if(online===false){
+        return(<div>
+            <h1>you are offline please check you internet connection before you try </h1>
+        </div>)
     }
 
-    return (
+    return listofres.length===0 ? <Shimmerui/> :(
         <div className="body">
             <div className="filter">
+                <div className="search">
+                    <input type="text" className="search-box" 
+                    value={search} 
+                    onChange={(e)=>{setsearch(e.target.value)}}/>
+                    <button onClick={()=>{
+                        const filres=listofres.filter((r)=>
+                            r.info.name.toLowerCase().includes(search.toLowerCase())
+                    );
+                    setfiltres(filres);
+                    }}>search</button>
+                </div>
                 <button 
                     className="filter-btn" 
-                    onClick={handleTopRated}
-                >
+                    onClick={()=>{
+                        const filter = listofres.filter((res) => res.info.avgRating > 4);
+                        console.log(filter)
+                        setfiltres(filter)
+                    }}>
                     Top Rated Restaurants
                 </button>
             </div>
             <div className="res-container">
                 {
-                    listofres.map((restaurant) => (
-                        <RestaurantCard 
-                            key={restaurant.info.id} 
-                            resData={restaurant}
-                        />
+                    filtres.map((restaurant) => (
+                       <Link to={"/restaurants/"+restaurant.info.id} key={restaurant.info.id}> 
+                        <RestaurantCard resData={restaurant}/>
+                        </Link>
                     ))
                 }
             </div>

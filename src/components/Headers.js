@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import useOnlinestatus from "../utils/useOnlinestatus";
 
 const Header = () => {
     const [isLogin, setIsLogin] = useState(false);
@@ -6,7 +8,7 @@ const Header = () => {
     function handleBtn() {
         setIsLogin(!isLogin);
     }
-
+const online=useOnlinestatus();
     return (
         <div className="header">
             <div className="logo-container">
@@ -18,9 +20,21 @@ const Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
+                    <li>
+                        online status:{online ? "😁" : "🥴"}
+                    </li>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li> 
+                       <Link to="/about">About us</Link> 
+                    </li>
+                    <li>
+                     <Link to="/contact">Contact us</Link>   
+                    </li>
+                    <li>
+                    <Link to="/grocery">Grocery Store</Link> 
+                    </li>
                     <li>Cart</li>
                     <button onClick={handleBtn}>
                         {isLogin ? 'Logout' : 'Login'}
