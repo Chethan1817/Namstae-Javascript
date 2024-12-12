@@ -10,32 +10,32 @@ const Header = () => {
     }
 const online=useOnlinestatus();
     return (
-        <div className="header">
-            <div className="logo-container">
+        <div className="flex justify-between shadow-lg bg-pink-50">
+            <div className="w-56">
                 <img 
                     className="logo" 
                     src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?size=2" 
                     alt="Logo"
                 />
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>
+            <div className="felx items-center ">
+                <ul className="flex  p-4 m-4">
+                    <li className="px-4">
                         online status:{online ? "😁" : "🥴"}
                     </li>
-                    <li>
+                    <li className="px-4" >
                         <Link to="/">Home</Link>
                     </li>
-                    <li> 
+                    <li className="px-4"> 
                        <Link to="/about">About us</Link> 
                     </li>
-                    <li>
+                    <li className="px-4" >
                      <Link to="/contact">Contact us</Link>   
                     </li>
-                    <li>
+                    <li className="px-4" >
                     <Link to="/grocery">Grocery Store</Link> 
                     </li>
-                    <li>Cart</li>
+                    <li className="px-4">Cart</li>
                     <button onClick={handleBtn}>
                         {isLogin ? 'Logout' : 'Login'}
                     </button>
